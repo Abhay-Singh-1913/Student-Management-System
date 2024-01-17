@@ -13,7 +13,7 @@ A simple Student Management System to organize student information efficiently.
    - Methods: add, remove, search, and display students.
 
 3. **User Interface:**
-   - Console-based or GUI using Swing or JavaFX.
+   - Console-based.
 
 4. **Data Handling:**
    - Methods to read and write student data to storage (file, database).
