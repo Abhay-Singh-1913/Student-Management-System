@@ -159,6 +159,29 @@ public class Student_Management_System {
 				}
 
 				break;
+			case 3:
+				System.out.println(" ============================================ ");
+				System.out.print("| Enter the Student Rollno. to search : ");
+				int search_rollno = myInput.nextInt();
+				myInput.nextLine();
+				System.out.println(" ============================================ ");
+				Student getstudent = controller.searchStudent(search_rollno);
+				if (getstudent != null) {
+					System.out.println(green);
+					System.out.println(" =================================== ");
+					System.out.println(
+							"| " + getstudent.getRollno() + "  | " + getstudent.getName() + "   " + getstudent.getGrade());
+					System.out.println(" =================================== ");
+					System.out.println(reset);
+				} else {
+					System.out.println(red);
+					System.out.println(" ========================================= ");
+					System.out.println("|Student data not present with this rollno|");
+					System.out.println(" ========================================= ");
+					System.out.println(reset);
+				}
+				break;
+
 				
 	}
 
