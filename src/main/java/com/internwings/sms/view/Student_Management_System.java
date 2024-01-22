@@ -1,6 +1,12 @@
 package com.internwings.sms.view;
 
+import java.util.List;
+import java.util.Scanner;
+import com.internwings.sms.controller.StudentController;
+import com.internwings.sms.model.Student;
+
 public class Student_Management_System {
+
 	static Scanner myInput = new Scanner(System.in);
 	static StudentController controller = new StudentController();
 
@@ -11,6 +17,7 @@ public class Student_Management_System {
 		System.out.println("/////                                                /////");
 		System.out.println("//////////////////////////////////////////////////////////");
 	}
+
 	public static void main(String[] args) {
 		final String red = "\u001b[31;1m";
 		final String white = "\u001b[37;1m";
@@ -84,6 +91,7 @@ public class Student_Management_System {
 					System.out.println(reset);
 				}
 				break;
+
 			case 2:
 				System.out.println(" ============================================ ");
 				System.out.print("| Enter the Student Rollno. to update : ");
@@ -159,6 +167,7 @@ public class Student_Management_System {
 				}
 
 				break;
+
 			case 3:
 				System.out.println(" ============================================ ");
 				System.out.print("| Enter the Student Rollno. to search : ");
