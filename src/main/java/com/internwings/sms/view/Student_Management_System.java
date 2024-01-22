@@ -182,6 +182,28 @@ public class Student_Management_System {
 				}
 				break;
 
+			case 4:
+				List<Student> allStudents = controller.displayAllStudents();
+				if (allStudents != null) {
+					System.out.println(green);
+					System.out.println(" =================================== ");
+					System.out.println("|     List of Students Details      |");
+					System.out.println(" =================================== ");
+					for (Student student : allStudents) {
+						System.out.println(white+" =================================== ");
+						System.out.println("| " + student.getRollno() + "  | " + student.getName() + "   " + student.getGrade());
+						System.out.println(" =================================== ");
+					}
+					System.out.println(reset);
+				} else {
+					System.out.println(red);
+					System.out.println(" =================================== ");
+					System.out.println("|     Students data not present     |");
+					System.out.println(" =================================== ");
+					System.out.println(reset);
+				}
+				break;
+
 				
 	}
 
