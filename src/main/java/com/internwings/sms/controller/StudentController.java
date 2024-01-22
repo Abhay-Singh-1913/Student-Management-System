@@ -27,10 +27,22 @@ public class StudentController {
 			return false;
 		}
 		
-		public void update(String name, double grade) {
-			if (name != null) {
-				
+		public boolean updateStudentDetails(String updated_name,double updated_grade, int rollno) {
+			Student student = searchStudent(rollno);
+			if (student != null && updated_grade == 0) {
+				student.setName(updated_name);
+				entityTransaction.begin();
+				entityManager.merge(student);
+				entityTransaction.commit();
+				return true;
+			}else if (student != null && updated_name == null) {
+				student.setGrade(updated_grade);
+				entityTransaction.begin();
+				entityManager.merge(student);
+				entityTransaction.commit();
+				return true;
 			}
+			return false;
 		}
 		
 		public boolean deleteStudent(Student student) {
@@ -48,7 +60,7 @@ public class StudentController {
 		}
 		
 		public List<Student> displayAllStudents() {
-			String jpql = "SELECT std FORM Student std";
+			String jpql = "SELECT std FROM Student std";
 			TypedQuery<Student> query = entityManager.createQuery(jpql, Student.class);
 			return query.getResultList();
 		}
