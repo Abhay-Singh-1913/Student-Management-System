@@ -43,6 +43,47 @@ public class Student_Management_System {
 			myInput.nextLine();
 			System.out.println(" =================================== ");
 			System.out.println();
+
+			switch (choice) {
+
+			case 0:
+				myInput.close();
+				Flag = false;
+				break;
+			case 1:
+				System.out.println(green);
+				System.out.println(" ============================================ ");
+				System.out.println("| Enter all the details of Student carefully |");
+				System.out.println("| in order of rollno 1 to last rollno        |");
+				System.out.println("|    ( Rollno is auto generating)            |");
+				System.out.println(" ============================================ ");
+				System.out.println(white);
+				System.out.println(" ============================================ ");
+				System.out.print("| Enter the fullname of Student : ");
+				String fullname = myInput.nextLine();
+				System.out.println(" ============================================ ");
+				System.out.print("| Enter the Grade of Student(in percentage): ");
+				double percentage = myInput.nextDouble();
+				myInput.nextLine();
+				System.out.println(" ============================================ ");
+				Student newStudent = new Student();
+				newStudent.setName(fullname);
+				newStudent.setGrade(percentage);
+
+				if (controller.addStudent(newStudent)) {
+					System.out.println(green);
+					System.out.println(" =================================== ");
+					System.out.println("|    Student Added Successfully     |");
+					System.out.println(" =================================== ");
+					System.out.println(reset);
+				} else {
+					System.out.println(red);
+					System.out.println(" =================================== ");
+					System.out.println("|      Failed to Add Student        |");
+					System.out.println(" =================================== ");
+					System.out.println(reset);
+				}
+				break;
 	}
 
 }
