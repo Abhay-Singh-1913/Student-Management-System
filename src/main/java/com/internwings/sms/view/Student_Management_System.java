@@ -204,7 +204,22 @@ public class Student_Management_System {
 				}
 				break;
 
-				
+			default:
+				System.out.println(red);
+				System.out.println(" =================================== ");
+				System.out.println("| Invalid choice, please try again  |");
+				System.out.println(" =================================== ");
+				System.out.println(reset);
+				break;
+			}
+
+		}
+		System.out.println(yellow);
+		System.out.println(" =================================== ");
+		System.out.println("|       Thank you vist again        |");
+		System.out.println(" =================================== ");
+		System.out.println(reset);
+		System.exit(0);
 	}
 
 }
