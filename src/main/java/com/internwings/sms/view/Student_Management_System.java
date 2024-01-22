@@ -84,6 +84,82 @@ public class Student_Management_System {
 					System.out.println(reset);
 				}
 				break;
+			case 2:
+				System.out.println(" ============================================ ");
+				System.out.print("| Enter the Student Rollno. to update : ");
+				int rollno = myInput.nextInt();
+				myInput.nextLine();
+				System.out.println(" ============================================ ");
+				System.out.println(green);
+				System.out.println(" ============================================ ");
+				System.out.println("|    Enter the updated details of Student    |");
+				System.out.println("|             1. Student Name                |");
+				System.out.println("|             2. Student Grade               |");
+				System.out.println(" ============================================ ");
+				System.out.println(white);
+				System.out.println(" =================================== ");
+				System.out.print("| Enter Your Choice : ");
+				byte choice_update = myInput.nextByte();
+				myInput.nextLine();
+				System.out.println(" =================================== ");
+				System.out.println();
+
+				switch (choice_update) {
+				case 1:
+					System.out.println(" ============================================ ");
+					System.out.print("| Enter the updated Fullname of Student : ");
+					String updated_name = myInput.nextLine();
+					System.out.println(" ============================================ ");
+					double grade = 0;
+
+					if (controller.updateStudentDetails(updated_name, grade, rollno)) {
+						System.out.println(green);
+						System.out.println(" =================================== ");
+						System.out.println("| Student Name Updated Successfully |");
+						System.out.println(" =================================== ");
+						System.out.println(reset);
+					} else {
+						System.out.println(red);
+						System.out.println(" =================================== ");
+						System.out.println("|  Failed to Update Student Detail  |");
+						System.out.println(" =================================== ");
+						System.out.println(reset);
+					}
+					break;
+				case 2:
+					System.out.println(" ============================================ ");
+					System.out.print("| Enter the updated grade of Student : ");
+					double updated_grade = myInput.nextDouble();
+					myInput.nextLine();
+					System.out.println(" ============================================ ");
+					String name = null;
+
+					if (controller.updateStudentDetails(name, updated_grade, rollno)) {
+						System.out.println(green);
+						System.out.println(" =================================== ");
+						System.out.println("| Student grade Updated Successfully|");
+						System.out.println(" =================================== ");
+						System.out.println(reset);
+					} else {
+						System.out.println(red);
+						System.out.println(" =================================== ");
+						System.out.println("|  Failed to Update Student Detail  |");
+						System.out.println(" =================================== ");
+						System.out.println(reset);
+					}
+					break;
+
+				default:
+					System.out.println(red);
+					System.out.println(" =================================== ");
+					System.out.println("| Invalid choice, please try again  |");
+					System.out.println(" =================================== ");
+					System.out.println(reset);
+					break;
+				}
+
+				break;
+				
 	}
 
 }
